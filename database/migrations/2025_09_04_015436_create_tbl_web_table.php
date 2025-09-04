@@ -8,13 +8,11 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('tbl_web', function (Blueprint $table) {
-            $table->increments('web_id');
+            $table->increments('web_id'); 
             $table->string('web_nama');
             $table->string('web_logo');
             $table->string('web_deskripsi')->nullable();
@@ -24,10 +22,8 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('tbl_web');
     }

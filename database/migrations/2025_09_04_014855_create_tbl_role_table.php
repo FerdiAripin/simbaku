@@ -6,15 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
+
+    public function up(): void
     {
         Schema::create('tbl_role', function (Blueprint $table) {
-            $table->increments('role_id');
+            $table->increments('role_id'); 
             $table->string('role_title');
             $table->string('role_slug');
             $table->text('role_desc')->nullable();
@@ -23,11 +19,9 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
-     *
-     * @return void
+     * Rollback migration.
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('tbl_role');
     }

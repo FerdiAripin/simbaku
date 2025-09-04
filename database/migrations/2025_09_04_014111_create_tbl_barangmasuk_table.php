@@ -6,30 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
+    public function up(): void
     {
         Schema::create('tbl_barangmasuk', function (Blueprint $table) {
             $table->increments('bm_id');
             $table->string('bm_kode');
             $table->string('barang_kode');
-            $table->string('customer_id');
             $table->string('bm_tanggal');
             $table->string('bm_jumlah');
+            $table->text('bm_keterangan');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
+
+    public function down(): void
     {
         Schema::dropIfExists('tbl_barangmasuk');
     }
